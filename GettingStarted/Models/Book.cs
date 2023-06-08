@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using JetBrains.Annotations;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
@@ -13,10 +14,17 @@ public sealed class Book : Identifiable<int>
 
     [Attr]
     public int PublishYear { get; set; }
-    
+
     [Attr]
-    public Wrapper? Wrapper { get; set; }
-    
+    public string? Wrapper { get; set; }
+
+    [NotMapped]
+    public Wrapper InternalWrapper
+    {
+        get => new(Wrapper);
+        set => Wrapper = value.ToString();
+    }
+
     [HasOne]
     public Person Author { get; set; } = null!;
 }

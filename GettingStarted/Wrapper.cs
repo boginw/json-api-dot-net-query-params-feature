@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace GettingStarted;
 
-[JsonConverter(typeof(WrapperJsonConverter))]
+//[JsonConverter(typeof(WrapperJsonConverter))]
 public class Wrapper
 {
     public string Part1 { get; }
