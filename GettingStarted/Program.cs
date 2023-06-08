@@ -72,7 +72,7 @@ static async Task CreateSampleDataAsync(SampleDbContext dbContext)
         {
             Name = "Mary Shelley"
         },
-        Wrapper = new Wrapper("Frankenstein,Mary Shelley")
+        InternalWrapper = new Wrapper("Frankenstein,Mary Shelley")
     }, new Book
     {
         Title = "Robinson Crusoe",
@@ -81,7 +81,7 @@ static async Task CreateSampleDataAsync(SampleDbContext dbContext)
         {
             Name = "Daniel Defoe"
         },
-        Wrapper = new Wrapper("Daniel Defoe,Robinson Crusoe")
+        InternalWrapper = new Wrapper("Daniel Defoe,Robinson Crusoe")
     }, new Book
     {
         Title = "Gulliver's Travels",
@@ -90,7 +90,7 @@ static async Task CreateSampleDataAsync(SampleDbContext dbContext)
         {
             Name = "Jonathan Swift"
         },
-        Wrapper = new Wrapper("Jonathan Swift,Gulliver's Travels")
+        InternalWrapper = new Wrapper("Jonathan Swift,Gulliver's Travels")
     });
 
     await dbContext.SaveChangesAsync();
